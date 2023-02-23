@@ -68,11 +68,13 @@ def use_coupon(userNo, couponNo):
             time.sleep(10)
             response = requests.post(COUPON_URL, headers=HEADERS, data=data)
             response.raise_for_status()
-            failed_coupons.append(couponNo)
+            if not response_dict.get('isSuccess'):
+                failed_coupons.append(couponNo)
             print(f"{couponNo} - {response.text}")
         else:
             print(f"{couponNo} - {response.text}")
     except requests.exceptions.RequestException as e:
+        failed_coupons.append(couponNo)
         print(e)
 
 
