@@ -7,7 +7,7 @@ COUPON_URL = 'https://coupon-front.line.games/sbc/DC/useGameCoupon'
 COUPON_FILE = 'coupons.txt'
 USER_FILE = 'user.txt'
 couponNos = [
-    'Golddungeon', 'destiny', 'child', 'premium', 'mileage', 'event', 'shop', 'racechallenge', 'Endlessduel', 'Devilrumble', 'Popupstore',
+    'collect', 'Golddungeon', 'destiny', 'child', 'premium', 'mileage', 'event', 'shop', 'racechallenge', 'Endlessduel', 'Devilrumble', 'Popupstore',
     'Worldmap', 'Worldboss', 'Community', 'Notice', 'Live2D', 'Mailbox', 'Labyrinth', 'Level', 'Devilpass', 'Ignition',
     'myroom', 'soulcarta', 'puppet', 'underground', 'completebonus', 'onair', 'rank', 'engarde', 'fullauto', 'Leader',
     'Party', 'reward', 'bloodgem', 'normal', 'hard', 'worldbattle', 'Gold', 'bronze', 'collectionpoint', 'exploration',
@@ -68,7 +68,8 @@ def use_coupon(userNo, couponNo):
             time.sleep(10)
             response = requests.post(COUPON_URL, headers=HEADERS, data=data)
             response.raise_for_status()
-            if not response_dict.get('isSuccess'):
+            response_dict2 = json.loads(response.text)
+            if not response_dict2.get('isSuccess'):
                 failed_coupons.append(couponNo)
             print(f"{couponNo} - {response.text}")
         else:
@@ -82,7 +83,7 @@ def write_failed_coupon_file(failed_coupons):
     """
     Write the failed coupons to the 'coupons.txt' file.
     """
-    with open(COUPON_FILE, "a") as f:
+    with open(COUPON_FILE, "w") as f:
         for couponNo in failed_coupons:
             f.write(couponNo + "\n")
     print("I saved the failed coupons to [coupon.txt]")
@@ -108,4 +109,4 @@ if __name__ == '__main__':
         use_coupon(user_no, couponNo)
         time.sleep(5)
     write_failed_coupon_file(failed_coupons)
-
+    time.sleep(600)
