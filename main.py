@@ -7,7 +7,7 @@ COUPON_URL = 'https://coupon-front.line.games/sbc/DC/useGameCoupon'
 COUPON_FILE = 'coupons.txt'
 USER_FILE = 'user.txt'
 couponNos = [
-    'collect', 'Golddungeon', 'destiny', 'child', 'premium', 'mileage', 'event', 'shop', 'racechallenge', 'Endlessduel', 'Devilrumble', 'Popupstore',
+    'demonfiesta', 'areyouready', 'collect', 'Golddungeon', 'destiny', 'child', 'premium', 'mileage', 'event', 'shop', 'racechallenge', 'Endlessduel', 'Devilrumble', 'Popupstore',
     'Worldmap', 'Worldboss', 'Community', 'Notice', 'Live2D', 'Mailbox', 'Labyrinth', 'Level', 'Devilpass', 'Ignition',
     'myroom', 'soulcarta', 'puppet', 'underground', 'completebonus', 'onair', 'rank', 'engarde', 'fullauto', 'Leader',
     'Party', 'reward', 'bloodgem', 'normal', 'hard', 'worldbattle', 'Gold', 'bronze', 'collectionpoint', 'exploration',
