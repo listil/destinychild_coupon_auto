@@ -19,7 +19,8 @@ couponNos = [
     'platinum', 'rumblemission', 'bursters', 'difficulty', 'dailyreward', 'sliver', 'weakpoint', 'puellaemagicae',
     'atonement', 'touchthescreen', 'drivecrush', 'Omen', 'rebirthmission', 'mainmission', 'manual', 'evil',
     'hecateslibrary', 'update', 'hp', 'ragnarank', 'summoncarta', 'slayersraid', 'slayercount', 'silver', 'rival',
-    'bosslevel', 'raidshop', 'breakagain', 'Ragnabreaklimited', 'missionpass'
+    'bosslevel', 'raidshop', 'breakagain', 'Ragnabreaklimited', 'missionpass', 'bossraid', 'rumblechallenge', 
+    '98wbontwitter83rd22', '35w4bontwitter2nd79', '21wbontwitte3r1st42', '35wbontw9itter5th16', '76wbont4witter4th97', # Add 2023-07-04
 ]
 HEADERS = {
     'authority': 'coupon-front.line.games',
